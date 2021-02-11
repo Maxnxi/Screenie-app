@@ -1,24 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ScreenieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NCg-wD-4JC">
+                                <rect key="frame" x="0.0" y="44" width="390" height="616"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G6D-Pn-erI">
+                                        <rect key="frame" x="94.000000000000014" y="0.0" width="202.33333333333337" height="32.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" semanticContentAttribute="spatial" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0CP-Vj-UCg">
+                                        <rect key="frame" x="0.0" y="52.666666666666671" width="390" height="46"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="cPk-4b-gCF"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Skate" width="96.75"/>
+                                            <segment title="Food"/>
+                                            <segment title="Cat"/>
+                                            <segment title="Nature"/>
+                                        </segments>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <color key="selectedSegmentTintColor" systemColor="systemGrayColor"/>
+                                        <connections>
+                                            <action selector="imagePicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ax8-ad-LJf"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="skate" translatesAutoresizingMaskIntoConstraints="NO" id="uWK-qf-RjY">
+                                        <rect key="frame" x="45" y="117.66666666666663" width="300" height="300"/>
+                                        <color key="backgroundColor" red="0.58754431760000003" green="1" blue="0.64053959130000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="Lr1-DE-RTL"/>
+                                            <constraint firstAttribute="width" constant="300" id="cQp-vS-oXM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Microphone Access" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nZ-SG-XVP">
+                                        <rect key="frame" x="120.33333333333333" y="437.66666666666669" width="149.66666666666669" height="18.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LhU-am-7eh">
+                                        <rect key="frame" x="170.66666666666666" y="476" width="51" height="80"/>
+                                        <connections>
+                                            <action selector="togglePicked:" destination="BYZ-38-t0r" eventType="valueChanged" id="J5X-LC-tfK"/>
+                                        </connections>
+                                    </switch>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JC5-Cv-S0l">
+                                        <rect key="frame" x="150.66666666666666" y="576" width="89" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Hrp-4b-LN7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="26"/>
+                                        <state key="normal" title="Record">
+                                            <color key="titleColor" systemColor="systemGreenColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="recordBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5x3-7i-8zu"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0CP-Vj-UCg" secondAttribute="trailing" id="VEI-dm-Mgd"/>
+                                    <constraint firstItem="0CP-Vj-UCg" firstAttribute="leading" secondItem="NCg-wD-4JC" secondAttribute="leading" id="ndV-xU-CLB"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NCg-wD-4JC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mg5-aG-a2a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NCg-wD-4JC" secondAttribute="trailing" id="oXt-L3-gzb"/>
+                            <constraint firstItem="NCg-wD-4JC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sLA-7T-5bg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NCg-wD-4JC" secondAttribute="bottom" constant="150" id="wDk-9s-g1u"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imagePicker" destination="0CP-Vj-UCg" id="RHt-TQ-vBt"/>
+                        <outlet property="micToggle" destination="LhU-am-7eh" id="vci-bF-w5d"/>
+                        <outlet property="recordBtn" destination="JC5-Cv-S0l" id="qrQ-Ye-nOu"/>
+                        <outlet property="selectedImageView" destination="uWK-qf-RjY" id="WgG-ge-HdC"/>
+                        <outlet property="statusLbl" destination="G6D-Pn-erI" id="fPZ-he-cZ3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-26.086956521739133" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="skate" width="640" height="427"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
